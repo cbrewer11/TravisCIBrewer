@@ -98,9 +98,9 @@ namespace TravisCILab
         public void Pow_ValidBrewer()
         {
             Assert.AreEqual(4, Program.Power("2","2"));
-            Assert.AreEqual(27, Program.Divide("3","3"));
+            Assert.AreEqual(27, Program.Power("3","3"));
             //intentional fail
-            Assert.AreEqual(16, Program.Divide("2","4"));
+            Assert.AreEqual(16, Program.Power("2","4"));
         }
         
         [Test]
