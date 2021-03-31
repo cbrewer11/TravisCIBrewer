@@ -37,13 +37,13 @@ namespace TravisCILab
             Assert.AreEqual(6, Program.Subtract("7", "1"));
             Assert.AreEqual(3, Program.Subtract("6", "3"));
             //intentional fail
-            Assert.AreEqual(2, Program.Subtract("4", "3"));
+            Assert.AreEqual(1, Program.Subtract("4", "3"));
         }
         
         [Test]
         public void Sub_InvalidBrewer()
         {
-            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
         }
         
         [Test]
@@ -58,13 +58,13 @@ namespace TravisCILab
             Assert.AreEqual(10, Program.Multiply("2","5"));
             Assert.AreEqual(12, Program.Multiply("4","3"));
             //intentional fail
-            Assert.AreEqual(15, Program.Multiply("5","2"));
+            Assert.AreEqual(10, Program.Multiply("5","2"));
         }
         
         [Test]
         public void Mult_InvalidBrewer()
         {
-            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
         }
         
         [Test]
@@ -79,13 +79,13 @@ namespace TravisCILab
             Assert.AreEqual(5, Program.Divide("10","2"));
             Assert.AreEqual(3, Program.Divide("12","4"));
             //intentional fail
-            Assert.AreEqual(2, Program.Divide("10","3"));
+            Assert.AreEqual(2, Program.Divide("10","5"));
         }
         
         [Test]
         public void Div_InvalidBrewer()
         {
-            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
         }
         
         [Test]
@@ -100,13 +100,13 @@ namespace TravisCILab
             Assert.AreEqual(4, Program.Power("2","2"));
             Assert.AreEqual(27, Program.Divide("3","3"));
             //intentional fail
-            Assert.AreEqual(8, Program.Divide("2","4"));
+            Assert.AreEqual(16, Program.Divide("2","4"));
         }
         
         [Test]
         public void Pow_InvalidBrewer()
         {
-            Assert.Throws<ArgumentNullException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
         }
         
         [Test]
