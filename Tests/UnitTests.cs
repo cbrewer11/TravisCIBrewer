@@ -31,5 +31,25 @@ namespace TravisCILab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+        [Test]
+        public void Sub_ValidBrewer()
+        {
+            Assert.AreEqual(6, Program.Subtract("7", "1"));
+            Assert.AreEqual(3, Program.Subtract("6", "3"));
+            //intentional fail
+            Assert.AreEqual(2, Program.Subtract("4", "3"));
+        }
+        
+        [Test]
+        public void Sub_InvalidBrewer()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
+        }
+        
+        [Test]
+        public void Sub_NullBrewer()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));  
+        }
     }
 }
